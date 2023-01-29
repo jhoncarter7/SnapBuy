@@ -1,0 +1,16 @@
+
+.footer{
+
+    display: grid;
+    grid-template-columns: 31rem repeat(2, auto);
+    justify-content: space-around;
+    background-color: #101d2c;
+    padding: 4rem 0 4rem 0;
+    color: #fff;;
+}
+
+.footers a{
+display: block;
+text-decoration: none;
+color: #fff;;
+}
