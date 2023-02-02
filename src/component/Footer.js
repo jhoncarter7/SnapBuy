@@ -25,7 +25,7 @@ const Footer = () => {
         <a href="/">Terms and conditions</a>
       </div>
       <div>
-      <p>&copy; Copyright 2022 by By Nikhil Rai</p>
+      <p>&copy; Copyright 2022 by Nikhil Rai</p>
       </div>
     </div>
   );

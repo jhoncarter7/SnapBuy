@@ -10,12 +10,17 @@ const Dummy_phone = [{id: "a1", img: "phone/img1.jpg", Text: "  Apple iPhone 14 
 const Dummy_grocery = [{id: "a1", img: "groceries/img1.webp", Text: "Happilo 100% Natural Premium Californian Almonds, 500 g ", price: "₹432"}, {id: "a2", img: "groceries/img2.webp", Text: "Diaper Pants - Extra Large", price: "₹634"}, {id: "a3", img: "groceries/img3.webp", Text: " Tomato - Hybrid (Loose)", price: "₹31"}, {id: "a4", img: "groceries/img4.webp", Text: "Farm Eggs - Regular, Medium, Antibiotic Residue-Free 30-pcs", price: "₹180"}, {id: "a5", img: "groceries/img5.webp", Text: "Fresho Frozen Green Peas, 500 g Pouch ", price: "₹81"}]
 
 const Top = () => {
+  
+
 
     return(<Fragment>
         <div>
         <h1>Top Pick Clothes</h1>
-        <div className={classes.top}> 
-   { Dummy_clothes.map((Dummy)=> <TopClothes key={Dummy.id} img={Dummy.img} Text={Dummy.Text} price={Dummy.price}/>)}
+     
+        <div className={classes.top}   >
+        { Dummy_clothes.map((Dummy)=> <TopClothes key={Dummy.id} img={Dummy.img} Text={Dummy.Text} price={Dummy.price}/>)}
+      
+   
    </div>
    </div>
 

@@ -39,7 +39,7 @@ const clearRefTime = () => {
             <img className={classes.slide} key={i} src={Imgs.url} alt="images of banner" />
           ))}
         </div>
-{/* here i create three button by mapping dummy with every index(i) i=0,1,2 */}
+{/* here i create three button by mapping dummy with every index(i) i=0,1,2  so when you click its check its own position(index) i.e which index button u click*/}
         {dummy.map((_, i) => (
           <div className={classes.button} style={{background:`${currentIndex === i ? "red": ""}`}} key={i} onClick={()=>{setCurrentIndex(i)}}/>
         ))}

@@ -15,6 +15,7 @@
     width: 22rem;
      height: 28rem;
      transition: ease-out .4s;
+     /* padding: 2rem; */
 }
 .card:hover .cardimg{
     transform: scale(1.3);

@@ -24,10 +24,12 @@
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
+    background-color: #fb641b;
+    border-radius: 10px;
 }
 .button:hover{
-    background-color: #eebefa;
-    border-radius: 10px;
+    
+   
 }
 
 

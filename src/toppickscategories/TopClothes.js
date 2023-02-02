@@ -1,7 +1,9 @@
-// import classes from "./TopClothes.module.css";
+
 import classes from "./Top.module.css"
+
 const TopClothes = ({ img, Text, price }) => {
-  return  <div className={classes.card}>
+
+  return  <div tabIndex={0} className={classes.card}  >
     <img className={classes.cardimg} src={img} alt="images" />
     <div>{Text}</div>
     <div  className={classes.price}>{price}</div>

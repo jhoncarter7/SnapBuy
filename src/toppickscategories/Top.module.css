@@ -1,3 +1,5 @@
+
+
 .top {
     display: grid;
     grid-template-columns: repeat(5, auto);
@@ -5,9 +7,11 @@
     padding: 4rem;
     margin-bottom: 10rem;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 37rem;
- 
+  
+ overflow: scroll;
+ scrollbar-width: none;
 }
 
 
@@ -15,6 +19,7 @@
     width: 17rem;
     position: relative;
    box-shadow: 0 .3rem .6rem rgb(162, 167, 166);
+   /* transform: translateX(-10%); */
    
 }
 
@@ -27,7 +32,7 @@
    position: absolute;
    bottom: 1rem;
     border: none;
-    background-color: aqua;
+    background-color: #ff9f00;
     font-size: 1rem;
     display: block;
     /* margin-bottom: 0rem; */

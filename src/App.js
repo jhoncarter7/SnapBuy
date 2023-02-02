@@ -1,22 +1,18 @@
+import { Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Clothes from "./pages/Clothes.js";
+import Groceries from "./pages/Groceries.js";
+import Phone from "./pages/Phone.js";
+import Welcome from "./Welcome.js";
 
-import { Fragment } from 'react';
-import Categories from './component/Categories';
-import Footer from './component/Footer';
-
-
-import Nav from './component/Nav';
-import Item from './item/Item';
-import Top from './toppickscategories/Top';
 function App() {
-  return (<Fragment>
-   <Nav/>
-   <Item/>
-   <Categories/>
-   <Top/>
-   <Footer/>
-  </Fragment>
- 
-  )
+  return <Routes>
+    <Route path="/" element={<Navigate to={'/welcome'}/>}/>
+    <Route path="/welcome" element={<Welcome/>}/>
+    <Route path="/Phone" element={<Phone/>}/>
+    <Route path="/clothes" element={<Clothes/>}/>
+    <Route path="/Groceries" element={<Groceries/>}/>
+  </Routes>
 }
 
 export default App;
