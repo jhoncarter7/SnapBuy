@@ -7,7 +7,7 @@ const Groceriesjsx = (props) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
-    dispatch(cartAction.addTocart({ id, Text, price }));
+    dispatch(cartAction.addTocart({ id, Text, price , img, discount}));
   };
 
   return (

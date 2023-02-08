@@ -11,7 +11,7 @@ const CartItem = (props) => {
  const dispatch = useDispatch();
 
 
-const {id, price, title, totalPrice, quantity} =props
+const {id, price, title, totalPrice, quantity, img} =props
 
 const removeFromCartHandler =  ()=> {
   dispatch(cartAction.removeFromCart(id))
@@ -19,14 +19,14 @@ const removeFromCartHandler =  ()=> {
 
 
   const addToCartHandler = () => {
-    dispatch(cartAction.addTocart({id, title, price}));
+    dispatch(cartAction.addTocart({id, title, price, img}));
 
   };
 
 
   return (
     <section  className={classes.cart}>
-    
+    <img className={classes.cartimg} src={img} alt=""></img>
       <div className={classes.cartTitle}>{title}</div>
       <div>
         {" "}

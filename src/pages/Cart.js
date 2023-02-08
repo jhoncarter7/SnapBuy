@@ -1,20 +1,32 @@
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css"
+import { cartAction } from "../data/cart-Slice";
 const Cart = () => {
   const navigate = useNavigate();
 
   const cartItemList = useSelector((state) => state.cart.items);
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
-
-  console.log(cartItemList);
-  console.log(totalQuantity);
+  const dispatch = useDispatch()
 
   const exitButton = () => {
     navigate("/");
   };
+
+  const orderPlaceHandler = () => {
+    if(totalQuantity >= 1){
+      navigate("/OrderPlace")
+    } 
+    else{
+      return
+    }
+
+    dispatch(cartAction.replaceCartData({items: [], totalQuantity: 0}))
+  
+  }
+  
 
   return (
     <div className={classes.cartmain}>
@@ -35,6 +47,7 @@ const Cart = () => {
         <CartItem
           key={item.id}
           id={item.id}
+          img={item.img}
           price={item.price}
           quantity={item.quantity}
           title={item.Title}
@@ -43,7 +56,7 @@ const Cart = () => {
         />
       ))}
 
-      <button className={classes.orderbutton}>PlaceOrder</button>
+      <button className={classes.orderbutton} onClick={orderPlaceHandler}>PlaceOrder</button>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Cart from "./pages/Cart.js";
 import { FetchingCartData, sendingCartData } from "./data/SendFetch";
 import { useDispatch, useSelector } from "react-redux";
 import AuthForm from "./authentication/AuthForm.js";
+import OrderPlace from "./pages/OrderPlace.js";
 
 
 let isInitial = true
@@ -37,7 +38,7 @@ function App() {
       dispatch(sendingCartData(cart));
     }
   }, [cart, dispatch]);
-
+console.log(cart.items)
   return <Routes>
     <Route path="/" element={<Navigate to={'/welcome'}/>}/>
     <Route path="/welcome" element={<Welcome/>}/>
@@ -46,6 +47,7 @@ function App() {
     <Route path="/Groceries" element={<Groceries/>}/>
     <Route path="/Cart" element={<Cart/>}/>
     <Route path="/AuthForm" element={<AuthForm/>}/>
+    <Route path="/OrderPlace" element={<OrderPlace/>}/>
   </Routes>
 }
 
