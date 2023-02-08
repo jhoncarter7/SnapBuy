@@ -35,6 +35,7 @@ export const FetchingCartData = () => {
       dispatch(
         cartAction.replaceCartData({
           items: cartData.items || [],
+          actualProduct: cartData.actualProduct,
           totalQuantity: cartData.totalQuantity,
         })
       );
@@ -55,6 +56,7 @@ export const sendingCartData = (cart) => {
           method: "PUT",
           body: JSON.stringify({
             items: cart.items,
+            actualProduct: cart.actualProduct,
             totalQuantity: cart.totalQuantity,
           }),
         }
