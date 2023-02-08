@@ -1,25 +1,28 @@
 import { Fragment } from "react";
 import { clothesData } from "../data/clothesData";
-import classes from "./Clothes.module.css"
+import classes from "./Clothes.module.css";
 import Nav from "../component/Nav";
+import ItemAddedToCart from "../notification/ItemAddedToCart";
+import Clothesjsx from "./Clothesjsx";
+
 const Clothes = () => {
   return (
     <Fragment>
-      <Nav/>
-    <div className={classes.card}>
-      {clothesData.map((clothe) => (
-        <div key={clothe.id} className={classes.cardstart}>
-          <img src={clothe.img} alt=""/>
-          <div>{clothe.Text}</div>
-          <div className={classes.cardDiscount}>
-            <div className={classes.cardPrice}>{clothe.price}</div>
-            <div className={classes.cardRPrice}>{clothe.RealPrice}</div>
-            <div className={classes.cardoff}>{clothe.discount}</div>
-          </div>
-          <button className={classes.button}>addToCArt</button>
-        </div>
-      ))}
-    </div>
+      <ItemAddedToCart />
+      <Nav />
+      <div className={classes.card}>
+        {clothesData.map((clothe) => (
+          <Clothesjsx
+            key={clothe.id}
+            id={clothe.id}
+            img={clothe.img}
+            Text={clothe.Text}
+            price={clothe.price}
+            RealPrice={clothe.RealPrice}
+            discount={clothe.discount}
+          />
+        ))}
+      </div>
     </Fragment>
   );
 };

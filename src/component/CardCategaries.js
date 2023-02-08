@@ -12,6 +12,7 @@ else if(activation=== "s3") navigate("/Groceries")
   return (
   
       <div className={classes.card}>
+        
         <img className={classes.cardimg} src={img} alt="imag"/>
         <div className={classes.shopbutton} onClick={submitHandler}> shop now</div>
         <div>{Text}</div>

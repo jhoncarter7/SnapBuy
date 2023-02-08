@@ -1,0 +1,44 @@
+
+
+
+
+.cart{
+    width: 600px;
+    background-color: #fcbf49;
+   color: white;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+   text-align: center;
+   justify-items: center;
+   margin: 43px auto;
+   row-gap: 1rem;
+   border-radius: 10px;
+}
+
+.cartTitle{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    width: 300px;
+}
+
+.cartbutton{
+    display: flex;
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, auto); */
+    align-items: center;
+    grid-column: 2/3;
+   
+}
+
+.cartbutton button{
+    display: flex;
+    border: none;
+    background: none;
+    align-items: center;
+}
+
+
+.quantity{
+    width: 30px;
+  
+}

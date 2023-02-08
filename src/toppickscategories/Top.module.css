@@ -16,7 +16,7 @@
 
 
 .card {
-    width: 17rem;
+    width: 20rem;
     position: relative;
    box-shadow: 0 .3rem .6rem rgb(162, 167, 166);
    /* transform: translateX(-10%); */
