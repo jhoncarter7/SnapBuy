@@ -4,19 +4,21 @@ import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css"
 import { cartAction } from "../data/cart-Slice";
+import { useContext } from "react";
+import AuthContext from "../authentication/Auth-context";
 const Cart = () => {
   const navigate = useNavigate();
 
   const cartItemList = useSelector((state) => state.cart.items);
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
   const dispatch = useDispatch()
-
+ const authCtx = useContext(AuthContext)
   const exitButton = () => {
     navigate("/");
   };
 
   const orderPlaceHandler = () => {
-    if(totalQuantity >= 1){
+    if(totalQuantity >= 1 && authCtx.isLoggedIn){
       navigate("/OrderPlace")
     } 
     else{

@@ -6,8 +6,8 @@ const Footer = () => {
       <div className={classes.footers}>
         <h2>Follow the Flock</h2>
         <p>
-          Exclusive offers, a heads up on new things, and sightings of Allbirds
-          in the wild. Oh, we have cute sheep, too. #weareallbirds
+          Exclusive offers, a heads up on new things, and sightings of _
+          in the wild. Oh, we have cute sheep, too. #_
         </p>
       </div>
       <div className={classes.footers}>
