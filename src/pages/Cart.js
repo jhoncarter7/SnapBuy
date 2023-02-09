@@ -17,6 +17,7 @@ const Cart = () => {
     navigate("/");
   };
 
+
   const orderPlaceHandler = () => {
     if (totalQuantity >= 1 && authCtx.isLoggedIn) {
       navigate("/OrderPlace");

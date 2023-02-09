@@ -1,7 +1,7 @@
 // import { useDispatch } from "react-redux";
 import { cartAction } from "./cart-Slice";
 // import notificationAction from "./notification-slice"
-export const FetchingCartData = () => {
+export const FetchingCartData = (localId) => {
 
   return async (dispatch) => {
     const fetchingData = async () => {
@@ -12,7 +12,7 @@ export const FetchingCartData = () => {
       //     isdataFetch: "false"
       //   }))
       const response = await fetch(
-        "https://e-commerse-afecb-default-rtdb.firebaseio.com/cart.json"
+        `https://e-commerse-afecb-default-rtdb.firebaseio.com/${localId}/cart.json`
       );
 
       if (!response.ok) {
@@ -40,18 +40,18 @@ export const FetchingCartData = () => {
         })
       );
     } catch (error) {
-      alert("fetching  cart data failed");
+      console.log("fetching  cart data failed");
     }
   };
 };
 
 // sending cart data to the backend....
-export const sendingCartData = (cart) => {
+export const sendingCartData = (localId, cart) => {
   // const dispatch = useDispatch();
   return async (dispatch) => {
     const sendingData = async () => {
       const response = await fetch(
-        "https://e-commerse-afecb-default-rtdb.firebaseio.com/cart.json",
+        `https://e-commerse-afecb-default-rtdb.firebaseio.com/${localId}/cart.json`,
         {
           method: "PUT",
           body: JSON.stringify({

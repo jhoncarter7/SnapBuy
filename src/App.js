@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Clothes from "./pages/Clothes.js";
 import Groceries from "./pages/Groceries.js";
@@ -10,6 +10,7 @@ import { FetchingCartData, sendingCartData } from "./data/SendFetch";
 import { useDispatch, useSelector } from "react-redux";
 import AuthForm from "./authentication/AuthForm.js";
 import OrderPlace from "./pages/OrderPlace.js";
+import AuthContext from "./authentication/Auth-context.js";
 
 
 let isInitial = true
@@ -18,14 +19,15 @@ function App() {
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  console.log(cart);
+ const authCtx = useContext(AuthContext)
 
-
+const localId = authCtx.localId
 
   useEffect(() => {
-    dispatch(FetchingCartData());
+  if(localId || null)
+    dispatch(FetchingCartData(localId, null));
   
-  }, [dispatch]);
+  }, [localId, dispatch]);
 
   
   useEffect(() => {
@@ -34,11 +36,11 @@ function App() {
       return;
     }
 
-    if (cart.change) {
-      dispatch(sendingCartData(cart));
+    if (cart.change || localId) {
+      dispatch(sendingCartData(localId, cart));
     }
-  }, [cart, dispatch]);
-console.log(cart.items)
+  }, [cart, localId, dispatch]);
+
   return <Routes>
     <Route path="/" element={<Navigate to={'/welcome'}/>}/>
     <Route path="/welcome" element={<Welcome/>}/>
