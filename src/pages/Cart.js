@@ -10,6 +10,7 @@ const Cart = () => {
 
   const cartItemList = useSelector((state) => state.cart.items);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  console.log(cartItemList);
   // const actualProduct = useSelector((state) => state.cart.actualProduct);
   const dispatch = useDispatch();
   const authCtx = useContext(AuthContext);
@@ -28,10 +29,12 @@ const Cart = () => {
     dispatch(cartAction.replaceCartData({ items: [], totalQuantity: 0 }));
   };
 let grandTotal = 0
+let Price = 0
   return (
     <div className={classes.cartmain}>
       <p className="">your cart item</p>
-      <p> total number of product = {totalQuantity}</p>
+      {/* <p> total number of product = {totalQuantity}</p> */}
+    
       <img
         onClick={exitButton}
         src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/null/external-cross-interface-royyan-wijaya-detailed-outline-royyan-wijaya-2.png"
@@ -43,8 +46,11 @@ let grandTotal = 0
           cursor: `pointer`,
         }}
       />
+    { totalQuantity && <div className={classes.cartContainer}>
+      <div className={classes.containerItems}>
       {cartItemList.map((item) => 
      { grandTotal += item.totalPrice
+      Price += item.RealPrice
      return (
         <CartItem
           key={item.id}
@@ -53,14 +59,22 @@ let grandTotal = 0
           price={item.price}
           quantity={item.quantity}
           title={item.Title}
+          RealPrice={item.RealPrice}
           totalPrice={item.totalPrice}
           totalQuantity={item.totalQuantity}
         />
       )})}
-  <p>GrandTotal = ₹{grandTotal}</p>
+      </div>
+      <div className={classes.cartBox}>
+      <p>Realprice({totalQuantity}item)  <span>₹{Price}</span></p>
+      <p>Discount <span> ₹{Price-grandTotal}</span> </p>
+      <p>Delivery charge  <span>Free</span></p>
+    <p>Total Amount <span>₹{grandTotal}</span> </p>
       <button className={classes.orderbutton} onClick={orderPlaceHandler}>
         PlaceOrder
       </button>
+      </div>
+      </div>}
     </div>
   );
 };

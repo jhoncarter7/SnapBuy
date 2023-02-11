@@ -7,9 +7,10 @@ import Phonejsx from "./Phonejsx";
 
 const Phone = () => {
   return (
-    <Fragment>
+    <Fragment >
+       <Nav />
+      <section>
       <ItemAddedToCart />
-      <Nav />
       <div className={classes.card}>
         {PhoneData.map((phn) => (
           <Phonejsx
@@ -23,6 +24,7 @@ const Phone = () => {
           />
         ))}
       </div>
+      </section>
     </Fragment>
   );
 };

@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AuthForm from "./authentication/AuthForm.js";
 import OrderPlace from "./pages/OrderPlace.js";
 import AuthContext from "./authentication/Auth-context.js";
+import WhiseList from "./pages/WhiseList.js";
 
 
 let isInitial = true
@@ -50,8 +51,10 @@ const localId = authCtx.localId
     <Route path="/Cart" element={<Cart/>}/>
     <Route path="/AuthForm" element={<AuthForm/>}/>
     <Route path="/OrderPlace" element={<OrderPlace/>}/>
+    <Route path="/WhiseListProducts" element={<WhiseList/>}/>
   </Routes>
 }
+
 
 export default App;
 

@@ -2,18 +2,18 @@
 
 
 .card{
-    max-width: 22rem;
-    max-height: 32rem;
+    max-width: 20rem;
+    max-height: 29rem;
     /* border: 2px solid red; */
     text-align: center;
-  box-shadow: 0 .7rem 1rem rgb(162, 167, 166);
+  box-shadow: 0 .2rem .2rem rgb(162, 167, 166);
   position: relative;
  overflow: hidden;
 
 }
 .cardimg{
     width: 22rem;
-     height: 28rem;
+     height: 26rem;
      transition: ease-out .4s;
      /* padding: 2rem; */
 }

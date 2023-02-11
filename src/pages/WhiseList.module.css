@@ -1,0 +1,26 @@
+.cartmain {
+ 
+    /* background-image: radial-gradient(#7ed56f, #28b485); */
+    background-color: #c2c2c2;
+    min-height: 43rem;
+    max-width: max-content;
+    display: inline-block;
+    min-width: 1304px;
+  text-align: center;
+  max-height: auto;
+  padding-top: 2rem;
+  font-size: 1.1rem;
+   
+}
+
+.cartContainer{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3rem;
+  
+}
+.containerItems{
+    margin-left: 5rem;
+    background-color: #fff;
+}
+

@@ -4,7 +4,8 @@
     margin: 0 auto;
     max-width: 1305px;
     overflow: hidden;
-   text-align: center;   
+   text-align: center;  
+   padding-top: 4rem;
 
 }
 
@@ -16,13 +17,13 @@
 
 .slide{
     width: 1305px;
-    height: 38rem;
+    height: 32rem;
     
 }
 
 .button{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background-color: #748ffc;
     border: 2px solid black;

@@ -18,7 +18,7 @@
 .card {
     width: 20rem;
     position: relative;
-   box-shadow: 0 .3rem .6rem rgb(162, 167, 166);
+   /* box-shadow: 0 .3rem .6rem rgb(162, 167, 166); */
    /* transform: translateX(-10%); */
    
 }
@@ -46,3 +46,8 @@
     background-color: black;
     color: white;
 }
+
+/* .svg{
+    background-image: "https://img.icons8.com/windows/32/null/hearts.png";
+    background-color: red;
+} */

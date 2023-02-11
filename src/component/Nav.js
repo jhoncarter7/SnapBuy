@@ -25,6 +25,10 @@ navigate("/Cart")
     navigate("/")
   }
 
+  const WhiseListHandler = () => {
+    navigate("/WhiseListProducts")
+  }
+
 
   return (
     <nav className={classes.nav}>
@@ -57,11 +61,11 @@ navigate("/Cart")
           </div>
            </div>
         </li>
-        <li>
+        <li onClick={WhiseListHandler}>
           <img
             className={classes.navimg}
             src="https://img.icons8.com/ios/50/null/hearts--v1.png"
-            alt=""
+            alt="whiseList"
           />
         </li>
         <li onClick={CartData}>

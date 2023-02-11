@@ -1,22 +1,45 @@
 import classes from "./Clothes.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../data/cart-Slice";
+import { whiseListAction } from "../data/whiseList-Slice";
 
 const Clothesjsx = (props) => {
   const { id, price, Text, img, RealPrice, discount } = props;
   const dispatch = useDispatch();
+  const items = useSelector((state) => state.whiseList.items);
+  const isWhiseList = items.find((item) => item.id === id);
+  const WhiseListHandler = () => {
+    if (isWhiseList) {
+      dispatch(whiseListAction.removingWhiseList(id));
+    } else {
+      dispatch(whiseListAction.addingWhiseList({ id, Text, price, img }));
+    }
+  };
 
   const addToCartHandler = () => {
-    dispatch(cartAction.addTocart({ id, Text, price, img, discount}));
+    dispatch(
+      cartAction.addTocart({ id, Text, price, img, discount, RealPrice })
+    );
   };
 
   return (
     <div className={classes.cardstart}>
-      <img
-        src="https://img.icons8.com/windows/32/null/hearts.png"
-        alt=""
-        style={{ marginLeft: `275px` }}
-      />
+      {isWhiseList ?  (
+        <img
+          src="https://img.icons8.com/office/30/000000/filled-like--v1.png"
+          alt=""
+          onClick={WhiseListHandler}
+          style={{ marginLeft: `275px` }}
+        />
+      ): (
+        <img
+          src="https://img.icons8.com/ios-glyphs/30/null/hearts.png"
+          alt=""
+          onClick={WhiseListHandler}
+          style={{ marginLeft: `275px` }}
+        />
+      ) }
+
       <img src={img} alt="" />
       <div>{Text}</div>
       <div className={classes.cardDiscount}>
