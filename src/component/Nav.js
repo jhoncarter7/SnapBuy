@@ -4,40 +4,35 @@ import { useSelector } from "react-redux";
 import { useContext } from "react";
 import AuthContext from "../authentication/Auth-context";
 const Nav = () => {
-const navigate = useNavigate()
-const totalQuantity = useSelector(state => state.cart.totalQuantity)
+  const navigate = useNavigate();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
-const cartCtx = useContext(AuthContext)
-
-
+  const cartCtx = useContext(AuthContext);
 
   const CartData = () => {
-navigate("/Cart")
+    navigate("/Cart");
   };
 
   const Homebutton = () => {
-    navigate("/")
-  }
+    navigate("/");
+  };
 
   const signoutHandler = () => {
-
     cartCtx.logout();
-    navigate("/")
-  }
+    navigate("/");
+  };
 
   const WhiseListHandler = () => {
-    navigate("/WhiseListProducts")
-  }
-
+    navigate("/WhiseListProducts");
+  };
 
   return (
     <nav className={classes.nav}>
-
       <input className={classes.input} placeholder="search your products" />
       <ul>
         <li>
           <img
-          onClick={Homebutton}
+            onClick={Homebutton}
             className={classes.navimg}
             src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/48/null/external-home-interface-royyan-wijaya-detailed-outline-royyan-wijaya.png"
             alt="home"
@@ -45,21 +40,21 @@ navigate("/Cart")
         </li>
         <li>
           <div className={classes.profile}>
-          <Link to="/AuthForm">
-          <img
-            className={classes.navimg}
-            src="https://img.icons8.com/ios/50/null/user-male-circle--v1.png"
-            alt="account"
-          />
-           </Link>
-          <div className={classes.profile_p}>
-          <Link to="/AuthForm">
-          <p>Login</p>
-          </Link>
+            <Link to="/AuthForm">
+              <img
+                className={classes.navimg}
+                src="https://img.icons8.com/ios/50/null/user-male-circle--v1.png"
+                alt="account"
+              />
+   </Link>
+            <div className={classes.profile_p}>
+              <Link to="/AuthForm">
+                <p>Login</p>
+              </Link>
 
-          {cartCtx.isLoggedIn && <p onClick={signoutHandler}>Logout</p>}
+              {cartCtx.isLoggedIn && <p onClick={signoutHandler}>Logout</p>}
+            </div>
           </div>
-           </div>
         </li>
         <li onClick={WhiseListHandler}>
           <img
@@ -69,7 +64,6 @@ navigate("/Cart")
           />
         </li>
         <li onClick={CartData}>
-
           <img
             className={classes.navimg}
             src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/null/external-shopping-cart-interface-kiranshastry-lineal-kiranshastry-1.png"
